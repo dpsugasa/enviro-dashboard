@@ -1,9 +1,9 @@
 FROM dpsugasa/armhf_python3_gpio
 RUN apt-get update -qy && \
     apt-get install -qy python3-smbus && \
-    apt-get install python3-pip && \
-    apt-get install python3-envirophat
+    apt-get install python3-pip 
 RUN pip3 install influxdb
+RUN pip3 install envirophat
 ADD ./monitor.py ./monitor.py
 
 ENTRYPOINT []
